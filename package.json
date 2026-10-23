@@ -1,0 +1,22 @@
+{
+  "name": "onblog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Martin's GitHub profile card and cartoon personal homepage on Cloudflare Workers",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "data": "node scripts/fetch-projects.mjs && node scripts/sync-readme.mjs",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run build && npm run typecheck && npm run freshness",
+    "freshness": "node scripts/check-freshness.mjs",
+    "media": "node scripts/upload-media.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261019.1",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.42.0"
+  }
+}

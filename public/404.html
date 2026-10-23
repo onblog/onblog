@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 · 这页被猫叼走了 | Martin</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <style>
+      :root {
+        --paper: #fff6e4;
+        --ink: #2b2622;
+        --ink-2: #74695d;
+        --gold-soft: #f6d68e;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        color: var(--ink);
+        background-color: var(--paper);
+        background-image: radial-gradient(rgba(43, 38, 34, 0.09) 1.1px, transparent 1.1px);
+        background-size: 22px 22px;
+        font-family: "PingFang SC", "Hiragino Sans GB", system-ui, sans-serif;
+        text-align: center;
+      }
+      .box {
+        max-width: 460px;
+        padding: 36px 30px 32px;
+        border: 3px solid var(--ink);
+        border-radius: 26px;
+        background: #fffcf2;
+        box-shadow: 8px 8px 0 var(--ink);
+      }
+      .cat {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 14px;
+      }
+      h1 {
+        font-size: 26px;
+        margin: 0 0 6px;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 0 0 18px;
+        color: var(--ink-2);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        background: var(--gold-soft);
+        padding: 1px 6px;
+        border-radius: 6px;
+        font-size: 13px;
+      }
+      a.back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 20px;
+        border: 2.5px solid var(--ink);
+        border-radius: 999px;
+        background: var(--gold-soft);
+        box-shadow: 4px 4px 0 var(--ink);
+        font-weight: 700;
+        color: var(--ink);
+        text-decoration: none;
+      }
+      a.back:hover {
+        transform: translate(-1px, -1px);
+        box-shadow: 5px 5px 0 var(--ink);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="cat">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M14 27 L11 9 L26 17 Z" fill="#FFEDCD" stroke="#2B2622" stroke-width="4" stroke-linejoin="round" />
+          <path d="M50 27 L53 9 L38 17 Z" fill="#FFEDCD" stroke="#2B2622" stroke-width="4" stroke-linejoin="round" />
+          <circle cx="32" cy="37" r="18" fill="#F6D68E" stroke="#2B2622" stroke-width="4" />
+          <path d="M23 33 l4 4 M27 33 l-4 4 M37 33 l4 4 M41 33 l-4 4" stroke="#2B2622" stroke-width="2.6" stroke-linecap="round" />
+          <path d="M29.6 41 h4.8 l-2.4 2.8 z" fill="#2B2622" />
+          <path d="M18 46 q14 6 28 0" fill="none" stroke="#2B2622" stroke-width="2.6" stroke-linecap="round" />
+        </svg>
+      </div>
+      <h1>404 · 这页被猫叼走了</h1>
+      <p>
+        This page was carried off by a cat.<br />
+        路径 <code id="path">/</code> 找不到，回首页看看吧。
+      </p>
+      <a class="back" href="/">← 回首页 / Back home</a>
+    </div>
+    <script>
+      document.getElementById("path").textContent = location.pathname.slice(0, 60);
+    </script>
+  </body>
+</html>

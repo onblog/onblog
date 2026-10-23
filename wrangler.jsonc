@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "wordtk",
+  "main": "src/index.ts",
+  // 新建项目使用当天日期（官方建议始终跟随当前日期）。
+  "compatibility_date": "2026-10-23",
+
+  // 只走自有域名：workers.dev 子域关闭，避免同一个站点有两个入口。
+  "workers_dev": false,
+
+  // 根域名 = 主站唯一域名。部署时 Cloudflare 自动接管 DNS 记录与证书。
+  // www 的 301 由 zone 级 Single Redirect 规则在 Worker 之前拦下，
+  // 因此 **Worker 代码里不写 www 跳转**（规则一旦失效要能看见故障，而不是被兜底掩盖）。
+  // 域名绑定不写在这个文件里：生产域名属于部署配置，统一在 Cloudflare
+  // Dashboard 的 Worker → Settings → Domains & Routes 维护。这样仓库里不会
+  // 出现任何线上域名，fork 之后也能直接绑定自己的域名。
+
+  // 赞赏码不进仓库：对象放在 R2 的 common 桶（onblog/media/ 前缀），由 Worker 按路径取回。
+  "r2_buckets": [
+    { "binding": "R2_MEDIA", "bucket_name": "common" }
+  ],
+
+  // 只缓存 GitHub 调用结果，不缓存接口响应本身。
+  // 命名空间 `common` 是全项目共用的 KV，所有 key 必须以 `onblog:` 前缀开头。
+  // 成功 300s / 兜底 60s，跨机房共享。
+  "kv_namespaces": [
+    { "binding": "GITHUB_CACHE", "id": "a81355effe1948efba1e9cf97ae3d04a" }
+  ],
+
+  // 静态优先：命中 public/ 的请求由边缘直出，不执行 Worker、不计请求数。
+  // 只有 /api/* 会进入 Worker（接口前缀一律 /api/，且该前缀下不放任何静态文件）。
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    // 赞赏码两个路径交给 Worker（从 R2 取），其余静态资源照旧免费直出。
+    "run_worker_first": ["/api/*", "/media/wechat-pay.png", "/media/wechat-pay.webp"]
+  },
+
+  // 日志与追踪全开：traces 不跟随 enabled，必须单独开启。
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true
+    }
+  }
+}
