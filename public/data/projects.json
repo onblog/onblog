@@ -1,0 +1,217 @@
+{
+  "generatedAt": "2026-10-31",
+  "owner": "onblog",
+  "followers": 624,
+  "totalStars": 4110,
+  "categories": [
+    "app",
+    "lib",
+    "site",
+    "game"
+  ],
+  "projects": [
+    {
+      "id": "dsh-ready",
+      "name": "DSH Ready",
+      "zhName": "DSH 就位",
+      "url": "https://github.com/onblog/dsh-ready",
+      "home": "https://dsh.__SITE_DOMAIN__",
+      "stars": 1,
+      "forks": 0,
+      "language": "JavaScript",
+      "created": "2026-10-29",
+      "pushed": "2026-10-31",
+      "descEn": "One-click desktop launcher for DeepSeek Harness — install, launch and upgrade without touching a terminal.",
+      "descZh": "DeepSeek Harness 一键桌面启动器：装好、启动、升级，全程不用终端。",
+      "icon": "rocket",
+      "logo": "/media/projects/dsh-ready.png",
+      "category": "app"
+    },
+    {
+      "id": "xiu-xian-game",
+      "name": "Xiu Xian Game",
+      "zhName": "凡人修仙",
+      "url": "https://github.com/onblog/xiu-xian-game",
+      "home": "https://xiuxian.__SITE_DOMAIN__",
+      "stars": 2,
+      "forks": 0,
+      "language": "TypeScript",
+      "created": "2026-10-23",
+      "pushed": "2026-10-24",
+      "descEn": "An AI-narrated xianxia text RPG: play Li Feiyu three years before Han Li joins the sect, pick A/B/C, and a language model writes every scene. No account, no database — open the page and play",
+      "descZh": "凡人修仙传同人 AI 文字修仙游戏：扮演厉飞雨，故事从韩立拜入七玄门的三年前开始，选项式推进、剧情由大模型实时生成；无需注册登录、无数据库，打开网页就能玩。",
+      "icon": "sword",
+      "logo": "/media/projects/xiu-xian-game.svg",
+      "category": "game"
+    },
+    {
+      "id": "maowo-blog",
+      "name": "Maowo Blog",
+      "zhName": "猫窝博客",
+      "url": "https://github.com/onblog/maowo-blog",
+      "home": "https://blog.__SITE_DOMAIN__",
+      "stars": 1,
+      "forks": 0,
+      "language": "TypeScript",
+      "created": "2026-10-22",
+      "pushed": "2026-10-26",
+      "descEn": "Maowo Blog — a personal, independent blog for Cloudflare Workers",
+      "descZh": "猫窝博客：为读者而生的个人独立博客系统。",
+      "icon": "blog",
+      "logo": "/media/projects/maowo-blog.svg",
+      "category": "site"
+    },
+    {
+      "id": "miaomiao-bar",
+      "name": "Miaomiao Bar",
+      "zhName": "喵喵剪贴板",
+      "url": "https://github.com/onblog/miaomiao-bar",
+      "home": "https://bar.__SITE_DOMAIN__",
+      "stars": 1968,
+      "forks": 283,
+      "language": "JavaScript",
+      "created": "2020-01-03",
+      "pushed": "2026-10-31",
+      "descEn": "The clipboard workbench for macOS: whatever lands on it — a paragraph, a column of names, a picture — comes back cleaned, tidied and ready to paste.",
+      "descZh": "喵喵剪贴板：macOS 上的剪贴板工作台，文字和图片进了剪贴板就变成能直接用的样子。",
+      "icon": "clipboard",
+      "logo": "/media/projects/miaomiao-bar.png",
+      "category": "app"
+    },
+    {
+      "id": "miaomiao-notes",
+      "name": "Miaomiao Notes",
+      "zhName": "喵喵笔记",
+      "url": "https://github.com/onblog/miaomiao-notes",
+      "home": "https://notes.__SITE_DOMAIN__",
+      "stars": 424,
+      "forks": 47,
+      "language": "JavaScript",
+      "created": "2019-11-05",
+      "pushed": "2026-10-31",
+      "descEn": "Miaomiao Notes — a cute, local-first Markdown notes app for macOS, synced through iCloud Drive.",
+      "descZh": "喵喵笔记：一只喵喵的本地 Markdown 笔记应用，通过 iCloud Drive 同步。",
+      "icon": "notes",
+      "logo": "/media/projects/miaomiao-notes.png",
+      "category": "app"
+    },
+    {
+      "id": "java-limiter",
+      "name": "Java Limiter",
+      "zhName": "疾限",
+      "url": "https://github.com/onblog/java-limiter",
+      "home": "https://limiter.__SITE_DOMAIN__",
+      "stars": 838,
+      "forks": 221,
+      "language": "Java",
+      "created": "2019-04-14",
+      "pushed": "2026-10-31",
+      "descEn": "Lock-free rate limiter for Java 8+: token bucket, leaky bucket, sliding window, fixed window, warm-up and a concurrency bulkhead",
+      "descZh": "无锁限流库：六种算法，单 jar 零依赖。",
+      "icon": "gauge",
+      "logo": "/media/projects/java-limiter.svg",
+      "category": "lib"
+    },
+    {
+      "id": "doctor",
+      "name": "Doctor",
+      "zhName": "症状自查",
+      "url": "https://github.com/onblog/doctor",
+      "home": "https://doctor.__SITE_DOMAIN__",
+      "stars": 352,
+      "forks": 140,
+      "language": "JavaScript",
+      "created": "2018-12-06",
+      "pushed": "2026-10-24",
+      "descEn": "Educational symptom self-check on a medical knowledge graph: pick a body part and your symptoms, and it ranks candidate diseases by how much of your input they explain. Not a diagnosis",
+      "descZh": "医疗知识图谱驱动的症状自查：选身体部位、勾选症状，按「能解释你多少症状」给候选疾病排序，并筛掉不可能的科室；覆盖 7733 种疾病、4697 个症状。仅供科普参考，不能替代诊断。",
+      "icon": "stethoscope",
+      "logo": "/media/projects/doctor.svg",
+      "category": "site"
+    },
+    {
+      "id": "font-squeeze",
+      "name": "Font Squeeze",
+      "zhName": "字压",
+      "url": "https://github.com/onblog/font-squeeze",
+      "home": "https://font.__SITE_DOMAIN__",
+      "stars": 524,
+      "forks": 192,
+      "language": "JavaScript",
+      "created": "2018-11-14",
+      "pushed": "2026-10-23",
+      "descEn": "A browser-only WebFont subsetter and container converter for ttf/woff/woff2 — fonts never leave the page",
+      "descZh": "字压：纯前端字体按需裁剪与格式转换工具。",
+      "icon": "type",
+      "logo": "/media/projects/font-squeeze.svg",
+      "category": "app"
+    }
+  ],
+  "timeline": [
+    {
+      "year": 2026,
+      "items": [
+        {
+          "name": "DSH Ready",
+          "zh": "DSH 就位",
+          "url": "https://github.com/onblog/dsh-ready"
+        },
+        {
+          "name": "Xiu Xian Game",
+          "zh": "凡人修仙",
+          "url": "https://github.com/onblog/xiu-xian-game"
+        },
+        {
+          "name": "Maowo Blog",
+          "zh": "猫窝博客",
+          "url": "https://github.com/onblog/maowo-blog"
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "items": [
+        {
+          "name": "Miaomiao Bar",
+          "zh": "喵喵剪贴板",
+          "url": "https://github.com/onblog/miaomiao-bar"
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "items": [
+        {
+          "name": "Miaomiao Notes",
+          "zh": "喵喵笔记",
+          "url": "https://github.com/onblog/miaomiao-notes"
+        },
+        {
+          "name": "Java Limiter",
+          "zh": "疾限",
+          "url": "https://github.com/onblog/java-limiter"
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "items": [
+        {
+          "name": "Doctor",
+          "zh": "症状自查",
+          "url": "https://github.com/onblog/doctor"
+        },
+        {
+          "name": "Font Squeeze",
+          "zh": "字压",
+          "url": "https://github.com/onblog/font-squeeze"
+        }
+      ]
+    },
+    {
+      "year": 2017,
+      "items": [],
+      "join": true
+    }
+  ]
+}

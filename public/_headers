@@ -1,0 +1,31 @@
+# Cloudflare 会往 HTML 里注入 Web Analytics beacon（域名级默认开启），
+# CSP 里必须放行 static.cloudflareinsights.com，否则每次加载都留一条控制台报错。
+# api.github.com 是 star / fork 渐进增强用的匿名只读请求（app.js），发不出去也不影响内容。
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com https://api.github.com; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+/data/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Type: application/json; charset=utf-8
+
+# 图片：浏览器缓存 5 分钟，过期后用 ETag 协商（换图最多 5 分钟生效，不需要改文件名或加 ?v=）。
+# 静态资源本身会被 Cloudflare 的 CDN 缓存（响应头里能看到 cf-cache-status: HIT）。
+# （赞赏码由 Worker 从 R2 提供，头在 src/index.ts 里，语义相同）
+/media/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+# 页面与脚本必须每次回源校验：改一版 JS 却让老缓存继续跑，是这类纯静态站最常见的线上事故。
+/styles.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/app.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Toolstack 工具栈">
+  <title>Toolstack 工具栈</title>
+  <!-- 品牌底：DESIGN.md 的 accent 墨绿，圆角方块与 iOS 图标网格对齐 -->
+  <rect width="512" height="512" rx="112" fill="#0b7a68"/>
+  <!-- 2×2 网格：与页头左上角的 BrandMark.astro 同一形状（工具集合），白色描边 -->
+  <g fill="none" stroke="#ffffff" stroke-width="40" stroke-linecap="round">
+    <rect x="54" y="54" width="160" height="160" rx="30"/>
+    <rect x="298" y="54" width="160" height="160" rx="30"/>
+    <rect x="54" y="298" width="160" height="160" rx="30"/>
+    <rect x="298" y="298" width="160" height="160" rx="30"/>
+  </g>
+</svg>
