@@ -18,6 +18,12 @@
 
 [🇺🇸 English](README.md) &nbsp;·&nbsp; 🇨🇳 **简体中文**
 
+<br/><br/>
+
+<img src="https://wordtk.com/media/wechat-pay.webp" width="176" alt="微信赞赏码" />
+
+<sub>请我喝杯咖啡 ☕</sub>
+
 <br/>
 
 <sub>有问题或想法？[开一个 Issue](https://github.com/onblog/onblog/issues)。</sub>

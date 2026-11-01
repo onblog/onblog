@@ -18,6 +18,12 @@ Software engineer & UI designer · Java / JavaScript · Cloudflare Workers
 
 🇺🇸 **English** &nbsp;·&nbsp; [🇨🇳 简体中文](README.zh-CN.md)
 
+<br/><br/>
+
+<img src="https://wordtk.com/media/wechat-pay.webp" width="176" alt="WeChat tip QR code / 微信赞赏码" />
+
+<sub>Buy me a coffee ☕</sub>
+
 <br/>
 
 <sub>Questions or ideas? [Open an issue](https://github.com/onblog/onblog/issues).</sub>

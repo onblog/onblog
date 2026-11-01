@@ -398,6 +398,9 @@ if (!siteUrl) {
 
 // 生产构建时才拿得到真实值；本地没有 .env 时这一节自动跳过。
 // 不扫描 public/index.html —— 它在生产构建里本来就会由 render-seo / render 注入真实域名。
+// 不扫描 README.md / README.zh-CN.md / LICENSING.md —— 它们是文档，不是构建输入：
+// README 需要用线上地址直接展示赞赏码图片，GitHub 也按原样渲染这些文件。
+// 代码、配置与快照仍然一个真实值都不许出现（下面这份列表就是那条线）。
 const isPlaceholder = (value) => /example\.(com|org|net)|localhost|127\.0\.0\.1/i.test(value);
 const privacyValues = [
   ['站点域名', tokens.__SITE_HOST__],
@@ -410,9 +413,6 @@ const privacyValues = [
 
 if (privacyValues.length > 0) {
   const privacyFiles = [
-    'README.md',
-    'README.zh-CN.md',
-    'LICENSING.md',
     '.env.example',
     'wrangler.jsonc',
     'src/index.html',
