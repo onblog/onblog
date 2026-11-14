@@ -8,8 +8,9 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "build": "node scripts/build.mjs",
-    "check": "npm run build && tsc --noEmit",
-    "typecheck": "tsc --noEmit"
+    "check": "npm run build && npm run check:no-hardcoded-origin && tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "check:no-hardcoded-origin": "node scripts/check-origin.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261019.1",
