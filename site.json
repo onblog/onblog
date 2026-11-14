@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "author": {
+    "name": "Martin",
+    "tagline": {
+      "en": "Keep the complexity inside the code, and leave the simplicity to whoever uses it.",
+      "zh": "把复杂留在代码里，把简单留给用的人。"
+    },
+    "bio": {
+      "en": "Software engineer and UI designer. Everything I ship is small: a clipboard, a notebook, a font tool. It opens, it works, it gets out of the way. Most of them carry a cat in the name.",
+      "zh": "软件工程师，也做 UI 设计。我做的东西都很小：一个剪贴板、一本笔记、一个字体工具 —— 打开就能用，用完就走。它们大多名字里带着一只猫。"
+    },
+    "about": [
+      {
+        "en": "I'm Martin. Java and JavaScript pay the bills; the evenings go into small tools I genuinely use myself — that is how Miaomiao Bar, Miaomiao Notes and Font Squeeze started.",
+        "zh": "我是 Martin。白天写 Java 和 JavaScript，晚上做一点自己真的会用的小工具 —— 喵喵剪贴板、喵喵笔记、字压都是这么来的。"
+      },
+      {
+        "en": "I only have one rule: no tutorial required. So they stay local-first, with no account and no cloud black box in between.",
+        "zh": "判断标准只有一条：装上之后不需要教程。所以它们大多本地优先，不要账号，中间也没有一层云端黑盒。"
+      },
+      {
+        "en": "Over these years I have been moving them onto Cloudflare Workers — a tiny tool can now stay online all year without a server bill.",
+        "zh": "这几年我在把它们一个个搬到 Cloudflare Workers 上 —— 一个小工具不花服务器钱，也能一年 365 天在线。"
+      }
+    ],
+    "email": "hello@wordtk.com",
+    "github": "onblog"
+  },
+  "projects": [
+    {
+      "repo": "dsh-ready",
+      "name": {
+        "en": "DSH Ready",
+        "zh": "DSH 就位"
+      },
+      "summary": {
+        "en": "One-click desktop launcher for DeepSeek Harness — install, launch and upgrade without touching a terminal.",
+        "zh": "DeepSeek Harness 一键桌面启动器：装好、启动、升级，全程不用终端。"
+      },
+      "icon": "/media/projects/dsh-ready.png",
+      "category": "app",
+      "subdomain": "dsh"
+    },
+    {
+      "repo": "xiu-xian-game",
+      "name": {
+        "en": "Xiu Xian Game",
+        "zh": "凡人修仙"
+      },
+      "summary": {
+        "en": "An AI-narrated xianxia text RPG: play Li Feiyu three years before Han Li joins the sect, pick A/B/C, and a language model writes every scene. No account, no database — open the page and play",
+        "zh": "凡人修仙传同人 AI 文字修仙游戏：扮演厉飞雨，故事从韩立拜入七玄门的三年前开始，选项式推进、剧情由大模型实时生成；无需注册登录、无数据库，打开网页就能玩。"
+      },
+      "icon": "/media/projects/xiu-xian-game.svg",
+      "category": "game",
+      "subdomain": "xiuxian"
+    },
+    {
+      "repo": "maowo-blog",
+      "name": {
+        "en": "Maowo Blog",
+        "zh": "猫窝博客"
+      },
+      "summary": {
+        "en": "Maowo Blog — a personal, independent blog for Cloudflare Workers",
+        "zh": "猫窝博客：为读者而生的个人独立博客系统。"
+      },
+      "icon": "/media/projects/maowo-blog.svg",
+      "category": "site",
+      "subdomain": "blog"
+    },
+    {
+      "repo": "miaomiao-bar",
+      "name": {
+        "en": "Miaomiao Bar",
+        "zh": "喵喵剪贴板"
+      },
+      "summary": {
+        "en": "The clipboard workbench for macOS: whatever lands on it — a paragraph, a column of names, a picture — comes back cleaned, tidied and ready to paste.",
+        "zh": "喵喵剪贴板：macOS 上的剪贴板工作台，文字和图片进了剪贴板就变成能直接用的样子。"
+      },
+      "icon": "/media/projects/miaomiao-bar.png",
+      "category": "app",
+      "subdomain": "bar"
+    },
+    {
+      "repo": "miaomiao-notes",
+      "name": {
+        "en": "Miaomiao Notes",
+        "zh": "喵喵笔记"
+      },
+      "summary": {
+        "en": "Miaomiao Notes — a cute, local-first Markdown notes app for macOS, synced through iCloud Drive.",
+        "zh": "喵喵笔记：一只喵喵的本地 Markdown 笔记应用，通过 iCloud Drive 同步。"
+      },
+      "icon": "/media/projects/miaomiao-notes.png",
+      "category": "app",
+      "subdomain": "notes"
+    },
+    {
+      "repo": "java-limiter",
+      "name": {
+        "en": "Java Limiter",
+        "zh": "疾限"
+      },
+      "summary": {
+        "en": "Lock-free rate limiter for Java 8+: token bucket, leaky bucket, sliding window, fixed window, warm-up and a concurrency bulkhead",
+        "zh": "无锁限流库：六种算法，单 jar 零依赖。"
+      },
+      "icon": "/media/projects/java-limiter.svg",
+      "category": "lib",
+      "subdomain": "limiter"
+    },
+    {
+      "repo": "doctor",
+      "name": {
+        "en": "Doctor",
+        "zh": "症状自查"
+      },
+      "summary": {
+        "en": "Educational symptom self-check on a medical knowledge graph: pick a body part and your symptoms, and it ranks candidate diseases by how much of your input they explain. Not a diagnosis",
+        "zh": "医疗知识图谱驱动的症状自查：选身体部位、勾选症状，按「能解释你多少症状」给候选疾病排序，并筛掉不可能的科室；覆盖 7733 种疾病、4697 个症状。仅供科普参考，不能替代诊断。"
+      },
+      "icon": "/media/projects/doctor.svg",
+      "category": "site",
+      "subdomain": "doctor"
+    },
+    {
+      "repo": "font-squeeze",
+      "name": {
+        "en": "Font Squeeze",
+        "zh": "字压"
+      },
+      "summary": {
+        "en": "A browser-only WebFont subsetter and container converter for ttf/woff/woff2 — fonts never leave the page",
+        "zh": "字压：纯前端字体按需裁剪与格式转换工具。"
+      },
+      "icon": "/media/projects/font-squeeze.svg",
+      "category": "app",
+      "subdomain": "font"
+    }
+  ],
+  "products": [
+    {
+      "id": "oilmonkey",
+      "name": "Oil Monkey",
+      "zh": "油小猴",
+      "url": "https://aibot365.com",
+      "year": 2026,
+      "icon": "/media/products/oilmonkey.png",
+      "badge": {
+        "en": "Browser add-on",
+        "zh": "浏览器扩展"
+      },
+      "summary": {
+        "en": "An AI agent in your sidebar: it reads the page you are on, answers, clicks on your behalf, and turns a one-line goal into a running automation script.",
+        "zh": "装在侧边栏里的 AI 智能体：读你正在看的网页、回答问题、替你点按钮，一句话就能生成并运行自动化脚本。"
+      },
+      "badgeTone": "browser"
+    },
+    {
+      "id": "pigeon",
+      "name": "Pigeon",
+      "zh": "信鸽",
+      "url": "https://sendtk.com",
+      "year": 2026,
+      "icon": "/media/products/pigeon.png",
+      "badge": {
+        "en": "Notify & chat",
+        "zh": "通知 · 匿名聊天"
+      },
+      "summary": {
+        "en": "One HTTP request lands in QQ or Telegram — or put a link on your site so visitors ask anonymously, and you answer from QQ.",
+        "zh": "一条 HTTP 请求，消息直达 QQ 或 Telegram；也能把链接挂到网站上，访客匿名提问、你在 QQ 里引用回复。"
+      },
+      "badgeTone": "notify"
+    },
+    {
+      "id": "toolstack",
+      "name": "Toolstack",
+      "zh": "工具栈",
+      "url": "https://codetk.com",
+      "year": 2026,
+      "icon": "/media/products/toolstack.svg",
+      "badge": {
+        "en": "Online toolbox",
+        "zh": "在线工具"
+      },
+      "summary": {
+        "en": "115 tools for formatting, converting, encoding, cropping and compressing — all running in your browser, so what you paste never gets uploaded.",
+        "zh": "115 个在线工具：格式化、互转、编码、裁剪压缩图片。全部在浏览器里跑，粘进去的内容不上传。"
+      },
+      "badgeTone": "toolbox"
+    }
+  ]
+}

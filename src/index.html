@@ -9,7 +9,7 @@
       content="Martin (onblog) 的个人主页：软件工程师与 UI 设计，做打开就能用的小工具，全部开源在 GitHub 上。"
     />
     <meta name="theme-color" content="#FFF6E4" />
-    <link rel="canonical" href="__SITE_URL__/" />
+    <link rel="canonical" href="{{SITE_URL}}/" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/media/avatar.jpg" />
     <link rel="preload" as="image" href="/media/avatar.jpg" />
@@ -31,8 +31,8 @@
       property="og:description"
       content="{{OG_DESC}}"
     />
-    <meta property="og:url" content="__SITE_URL__/" />
-    <meta property="og:image" content="__SITE_URL__/media/wechat-pay.png" />
+    <meta property="og:url" content="{{SITE_URL}}/" />
+    <meta property="og:image" content="{{SITE_URL}}/media/wechat-pay.png" />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
 
@@ -71,28 +71,19 @@
         <div class="hero__copy">
           <p class="hero__hi" data-en="Hi, I'm" data-zh="你好，我是">你好，我是</p>
           <h1 class="hero__name">
-            Martin
+            {{AUTHOR_NAME}}
             <svg class="squiggle" viewBox="0 0 240 18" preserveAspectRatio="none" aria-hidden="true">
               <path d="M3 12 C 40 3, 62 16, 96 9 S 168 3, 200 10 S 228 14, 237 8" />
             </svg>
           </h1>
-          <p class="hero__sig" data-en="Keep the complexity inside the code, and leave the simplicity to whoever uses it." data-zh="把复杂留在代码里，把简单留给用的人。">
-            把复杂留在代码里，把简单留给用的人。
-          </p>
-          <p
-            class="hero__sub"
-            data-en="Software engineer and UI designer. Everything I ship is small: a clipboard, a notebook, a font tool. It opens, it works, it gets out of the way. Most of them carry a cat in the name."
-            data-zh="软件工程师，也做 UI 设计。我做的东西都很小：一个剪贴板、一本笔记、一个字体工具 —— 打开就能用，用完就走。它们大多名字里带着一只猫。"
-          >
-            软件工程师，也做 UI 设计。我做的东西都很小：一个剪贴板、一本笔记、一个字体工具 —— 打开就能用，用完就走。
-            它们大多名字里带着一只猫。
-          </p>
+          <p class="hero__sig" data-en="{{TAGLINE_EN}}" data-zh="{{TAGLINE_ZH}}">{{TAGLINE_ZH}}</p>
+          <p class="hero__sub" data-en="{{BIO_EN}}" data-zh="{{BIO_ZH}}">{{BIO_ZH}}</p>
           <div class="hero__cta">
             <a class="btn btn--primary" href="#projects">
               <svg class="ico" aria-hidden="true"><use href="#i-star" /></svg>
               <span data-en="See my projects" data-zh="看看我的项目">看看我的项目</span>
             </a>
-            <a class="btn" href="mailto:__CONTACT_EMAIL__">
+            <a class="btn" href="mailto:{{CONTACT_EMAIL}}">
               <svg class="ico" aria-hidden="true"><use href="#i-mail" /></svg>
               <span data-en="Say hello" data-zh="给我发邮件">给我发邮件</span>
             </a>
@@ -127,24 +118,8 @@
         </h2>
         <div class="about">
           <div class="about__text">
-            <p
-              data-en="I'm Martin. Java and JavaScript pay the bills; the evenings go into small tools I genuinely use myself — that is how Miaomiao Bar, Miaomiao Notes and Font Squeeze started."
-              data-zh="我是 Martin。白天写 Java 和 JavaScript，晚上做一点自己真的会用的小工具 —— 喵喵剪贴板、喵喵笔记、字压都是这么来的。"
-            >
-              我是 Martin。白天写 Java 和 JavaScript，晚上做一点自己真的会用的小工具 —— 喵喵剪贴板、喵喵笔记、字压都是这么来的。
-            </p>
-            <p
-              data-en="I only have one rule: no tutorial required. So they stay local-first, with no account and no cloud black box in between."
-              data-zh="判断标准只有一条：装上之后不需要教程。所以它们大多本地优先，不要账号，中间也没有一层云端黑盒。"
-            >
-              判断标准只有一条：装上之后不需要教程。所以它们大多本地优先，不要账号，中间也没有一层云端黑盒。
-            </p>
-            <p
-              data-en="Over these years I have been moving them onto Cloudflare Workers — a tiny tool can now stay online all year without a server bill."
-              data-zh="这几年我在把它们一个个搬到 Cloudflare Workers 上 —— 一个小工具不花服务器钱，也能一年 365 天在线。"
-            >
-              这几年我在把它们一个个搬到 Cloudflare Workers 上 —— 一个小工具不花服务器钱，也能一年 365 天在线。
-            </p>
+          <!-- build:about:start -->
+          <!-- build:about:end -->
           </div>
           <div class="about__stack">
             <h3 class="minor" data-en="Tools I reach for" data-zh="常用的东西">常用的东西</h3>
@@ -194,147 +169,18 @@
         <h2 class="panel__tab">
           <svg class="ico" aria-hidden="true"><use href="#i-bag" /></svg>
           <span data-en="Closed source" data-zh="闭源项目">闭源项目</span>
-          <span class="panel__count">3</span>
+          <span class="panel__count">{{PRODUCT_COUNT}}</span>
         </h2>
         <p
           class="panel__lede"
-          data-en="Beyond the open-source tools, I run three closed-source products: an AI agent that lives in your browser sidebar, a pipe that turns one HTTP request into a QQ or Telegram message, and an online toolbox."
-          data-zh="除了开源小工具，我还自己运营着三个闭源产品：一个住进浏览器侧边栏的 AI 助手、一条把 HTTP 请求直接推到 QQ 或 Telegram 的通知通道，还有一个在线工具箱。"
+          data-en="Beyond the open-source tools, I also run closed-source products of my own — built for myself first, then opened to everyone."
+          data-zh="除了开源小工具，我还自己运营着几款闭源产品 —— 先做给自己用，然后开放给所有人。"
         >
-          除了开源小工具，我还自己运营着三个闭源产品：一个住进浏览器侧边栏的 AI 助手、一条把 HTTP 请求直接推到 QQ 或 Telegram 的通知通道，还有一个在线工具箱。
+          除了开源小工具，我还自己运营着几款闭源产品 —— 先做给自己用，然后开放给所有人。
         </p>
         <div class="grid">
-          <article class="card card--product">
-            <div class="card__head">
-              <img
-                class="card__logo"
-                src="/media/products/oilmonkey.png"
-                alt="油小猴 / Oil Monkey"
-                width="52"
-                height="52"
-                loading="lazy"
-                decoding="async"
-              />
-              <span
-                class="card__badge card__badge--browser"
-                data-en="Browser add-on"
-                data-zh="浏览器扩展"
-                >浏览器扩展</span
-              >
-            </div>
-            <h3 class="card__title">
-              <a href="__PRODUCT_OILMONKEY_URL__" target="_blank" rel="noopener noreferrer">
-                <span>Oil Monkey</span><span class="card__zh">油小猴</span>
-              </a>
-            </h3>
-            <p
-              class="card__desc"
-              data-en="An AI agent in your sidebar: it reads the page you are on, answers, clicks on your behalf, and turns a one-line goal into a running automation script."
-              data-zh="装在侧边栏里的 AI 智能体：读你正在看的网页、回答问题、替你点按钮，一句话就能生成并运行自动化脚本。"
-            >
-              装在侧边栏里的 AI 智能体：读你正在看的网页、回答问题、替你点按钮，一句话就能生成并运行自动化脚本。
-            </p>
-            <div class="card__meta">
-              <span class="card__domain">__PRODUCT_OILMONKEY_HOST__</span>
-              <a
-                class="card__demo"
-                href="__PRODUCT_OILMONKEY_URL__"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-en="Visit site"
-                data-zh="打开网站"
-                >打开网站</a
-              >
-            </div>
-          </article>
-
-          <article class="card card--product">
-            <div class="card__head">
-              <img
-                class="card__logo"
-                src="/media/products/pigeon.png"
-                alt="信鸽 / Pigeon"
-                width="52"
-                height="52"
-                loading="lazy"
-                decoding="async"
-              />
-              <span
-                class="card__badge card__badge--notify"
-                data-en="Notify &amp; chat"
-                data-zh="通知 · 匿名聊天"
-                >通知 · 匿名聊天</span
-              >
-            </div>
-            <h3 class="card__title">
-              <a href="__PRODUCT_PIGEON_URL__" target="_blank" rel="noopener noreferrer">
-                <span>Pigeon</span><span class="card__zh">信鸽</span>
-              </a>
-            </h3>
-            <p
-              class="card__desc"
-              data-en="One HTTP request lands in QQ or Telegram — or put a link on your site so visitors ask anonymously, and you answer from QQ."
-              data-zh="一条 HTTP 请求，消息直达 QQ 或 Telegram；也能把链接挂到网站上，访客匿名提问、你在 QQ 里引用回复。"
-            >
-              一条 HTTP 请求，消息直达 QQ 或 Telegram；也能把链接挂到网站上，访客匿名提问、你在 QQ 里引用回复。
-            </p>
-            <div class="card__meta">
-              <span class="card__domain">__PRODUCT_PIGEON_HOST__</span>
-              <a
-                class="card__demo"
-                href="__PRODUCT_PIGEON_URL__"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-en="Visit site"
-                data-zh="打开网站"
-                >打开网站</a
-              >
-            </div>
-          </article>
-
-          <article class="card card--product">
-            <div class="card__head">
-              <img
-                class="card__logo"
-                src="/media/products/toolstack.svg"
-                alt="工具栈 / Toolstack"
-                width="52"
-                height="52"
-                loading="lazy"
-                decoding="async"
-              />
-              <span
-                class="card__badge card__badge--toolbox"
-                data-en="Online toolbox"
-                data-zh="在线工具"
-                >在线工具</span
-              >
-            </div>
-            <h3 class="card__title">
-              <a href="__PRODUCT_TOOLSTACK_URL__" target="_blank" rel="noopener noreferrer">
-                <span>Toolstack</span><span class="card__zh">工具栈</span>
-              </a>
-            </h3>
-            <p
-              class="card__desc"
-              data-en="115 tools for formatting, converting, encoding, cropping and compressing — all running in your browser, so what you paste never gets uploaded."
-              data-zh="115 个在线工具：格式化、互转、编码、裁剪压缩图片。全部在浏览器里跑，粘进去的内容不上传。"
-            >
-              115 个在线工具：格式化、互转、编码、裁剪压缩图片。全部在浏览器里跑，粘进去的内容不上传。
-            </p>
-            <div class="card__meta">
-              <span class="card__domain">__PRODUCT_TOOLSTACK_HOST__</span>
-              <a
-                class="card__demo"
-                href="__PRODUCT_TOOLSTACK_URL__"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-en="Visit site"
-                data-zh="打开网站"
-                >打开网站</a
-              >
-            </div>
-          </article>
+          <!-- build:products:start -->
+          <!-- build:products:end -->
         </div>
       </section>
 
@@ -372,15 +218,15 @@
             </p>
             <ul class="links">
               <li>
-                <a href="mailto:__CONTACT_EMAIL__">
+                <a href="mailto:{{CONTACT_EMAIL}}">
                   <svg class="ico" aria-hidden="true"><use href="#i-mail" /></svg>
-                  __CONTACT_EMAIL__
+                  {{CONTACT_EMAIL}}
                 </a>
               </li>
               <li>
-                <a href="https://github.com/onblog" target="_blank" rel="noopener noreferrer">
+                <a href="{{GITHUB_URL}}" target="_blank" rel="noopener noreferrer">
                   <svg class="ico" aria-hidden="true"><use href="#i-github" /></svg>
-                  github.com/onblog
+                  github.com/{{GITHUB_HANDLE}}
                 </a>
               </li>
             </ul>
@@ -409,7 +255,7 @@
 
     <footer class="foot">
       <p data-en="Content updated {{UPDATED}}." data-zh="内容更新于 {{UPDATED}}。">内容更新于 {{UPDATED}}。</p>
-      <p class="foot__copy">© 2026 Martin · <a href="/">__SITE_HOST__</a></p>
+      <p class="foot__copy">© 2026 Martin · <a href="/">{{SITE_HOST}}</a></p>
     </footer>
 
     <!-- 图标精灵：全部手绘风格、无外部字体/图标库依赖 -->

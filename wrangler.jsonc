@@ -8,25 +8,33 @@
   // 只走自有域名：workers.dev 子域关闭，避免同一个站点有两个入口。
   "workers_dev": false,
 
-  // 根域名 = 主站唯一域名。部署时 Cloudflare 自动接管 DNS 记录与证书。
-  // www 的 301 由 zone 级 Single Redirect 规则在 Worker 之前拦下，
-  // 因此 **Worker 代码里不写 www 跳转**（规则一旦失效要能看见故障，而不是被兜底掩盖）。
-  // 域名绑定不写在这个文件里：生产域名属于部署配置，统一在 Cloudflare
-  // Dashboard 的 Worker → Settings → Domains & Routes 维护。这样仓库里不会
-  // 出现任何线上域名，fork 之后也能直接绑定自己的域名。
+  // 项目列表的数据缓存。复用账号内的 common KV（不新建命名空间），
+  // key 一律带 onblog: 前缀（见 src/lib/aggregate.ts）。
+  // 过期由 stale-while-revalidate 控制，不靠 KV 自带的 TTL 删除。
+  "kv_namespaces": [{ "binding": "KV_CACHE", "id": "a81355effe1948efba1e9cf97ae3d04a" }],
+
+  // 站点身份信息（联系邮箱、闭源产品清单）不进这里，也不进代码：
+  // 统一放在仓库根目录的 site.json，构建期由 wrangler 打包进 bundle（见 src/lib/site.mjs）。
+  // 所以这个文件保持零配置：没有 vars、没有真实域名、没有密钥。
+
 
   // 赞赏码不进仓库：对象放在 R2 的 common 桶（onblog/media/ 前缀），由 Worker 按路径取回。
-  "r2_buckets": [
-    { "binding": "R2_MEDIA", "bucket_name": "common" }
-  ],
+  "r2_buckets": [{ "binding": "R2_MEDIA", "bucket_name": "common" }],
 
-  // 静态优先：整站（HTML / CSS / JS / 图片）由 Static Assets 边缘直出，不执行 Worker、不计请求数。
-  // 只有赞赏码两条路径会进入 Worker —— 数据不再在运行时拉 GitHub，所以没有 KV、没有 /api。
+  // 把 HTML 模板作为字符串模块打进 bundle：Worker 里 import './index.html' 需要它。
+  // 只对显式 import 的文件生效，public/ 下的静态文件仍由 Static Assets 原样提供。
+  "rules": [{ "type": "Text", "globs": ["src/**/*.html"], "fallthrough": true }],
+
+  // 静态优先：CSS / JS / 图片仍由 Static Assets 边缘直出，不执行 Worker、不计请求数。
+  // 只有首页与赞赏码两条路径进 Worker：
+  //   /             → SSR（读 KV 渲染，见 src/index.ts）
+  //   /index.html   → 同一个 SSR 处理（避免静态文件盖住运行时数据，M9 的「同名校验」坑）
+  //   媒体两条       → R2
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/media/wechat-pay.png", "/media/wechat-pay.webp"]
+    "run_worker_first": ["/", "/index.html", "/media/wechat-pay.png", "/media/wechat-pay.webp"]
   },
 
   // 日志与追踪全开：traces 不跟随 enabled，必须单独开启。
